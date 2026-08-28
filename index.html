@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
 
-  <!-- Reload everything every 5 minutes -->
+  <!-- Reload every 5 minutes -->
   <meta http-equiv="refresh" content="300">
 
   <style>
@@ -16,13 +16,23 @@
       background: black;
     }
 
-    iframe {
+    #slideshow {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
-      height: 100%;
+      height: calc(100% + 45px);
       border: 0;
+    }
+
+    #hide-controls {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 45px;
+      background: black;
+      z-index: 9999;
     }
   </style>
 </head>
@@ -30,9 +40,11 @@
 <body>
 
 <iframe
-src="https://docs.google.com/presentation/d/e/2PACX-1vSkwb3-AHcN7y9UChSA-IViBLkH_gRtvNyYa0BlFpP8aaIhEOxlhT7gbGqLOb-FIJclbnRBDgfLulaA/embed?start=true&loop=true&delayms=10000"
-allowfullscreen>
+  id="slideshow"
+  src="https://docs.google.com/presentation/d/e/2PACX-1vSkwb3-AHcN7y9UChSA-IViBLkH_gRtvNyYa0BlFpP8aaIhEOxlhT7gbGqLOb-FIJclbnRBDgfLulaA/embed?start=true&loop=true&delayms=10000">
 </iframe>
+
+<div id="hide-controls"></div>
 
 </body>
 </html>
